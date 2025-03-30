@@ -1,0 +1,48 @@
+[package]
+name = "plex-media-manager"
+version = "0.1.0"
+edition = "2021"
+authors = ["Your Name <your.email@example.com>"]
+description = "A CLI tool for managing Plex collections"
+
+[dependencies]
+fastrand = "2"
+[dependencies.tokio]
+version = "1.32"
+features = ["full", "parking_lot"]
+[dependencies.reqwest]
+version = "0.11"
+features = ["json"]
+[dependencies.serde]
+version = "1.0"
+features = ["derive"]
+[dependencies.serde_json]
+version = "1.0"
+[dependencies.clap] 
+version = "4.4"
+features = ["derive"]
+[dependencies.regex]
+version = "1"
+[dependencies.log]
+version = "0.4"
+[dependencies.tracing-subscriber]
+version = "0.3"
+features = ["env-filter", "json", "parking_lot", "tracing-log"]
+[dependencies.tracing]
+version = "0.1.40"
+features = ["log", "attributes"]
+[dependencies.strsim]
+version = "0.11"
+[dependencies.fasttext]
+version = "0.7"
+[dependencies.itertools]
+version = "0.14"
+[profile.release]
+lto = "fat"
+codegen-units = 1
+incremental = false
+opt-level = 3
+[profile.release.build-override]
+opt-level = 3
+incremental = false
+codegen-units = 1
